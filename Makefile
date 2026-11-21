@@ -1,3 +1,3 @@
 NAME = libftprintf.a
 
-OBJS = 
+OBJS = ft_putchar.o ft_putstr.o 
