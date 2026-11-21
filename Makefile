@@ -1,3 +1,3 @@
 NAME = libftprintf.a
 
-
+OBJS = 
