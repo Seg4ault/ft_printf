@@ -6,12 +6,11 @@
 /*   By: men-naim <men-naim@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 13:20:55 by men-naim          #+#    #+#             */
-/*   Updated: 2026/11/22 13:21:07 by men-naim         ###   ########.fr       */
+/*   Updated: 2026/11/22 16:09:09 by men-naim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <limits.h>
 
 static void rev_arr(char *p)
 {
@@ -47,7 +46,3 @@ int ft_putnbr_unsigned(unsigned int n)
   return (ft_putstr(array));
 }
 
-int main(void)
-{
-    ft_putnbr_unsigned(UINT_MAX);
-}

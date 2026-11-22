@@ -1,6 +1,7 @@
 NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror
-OBJS = ft_putchar.o ft_putstr.o ft_putnbr.o ft_putnbr_unsigned.o
+OBJS = ft_putchar.o ft_putstr.o ft_putnbr.o ft_putnbr_unsigned.o ft_puthex.o\
+       ft_putptr.o
 
 all: $(NAME)
 

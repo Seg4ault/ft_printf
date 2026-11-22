@@ -6,14 +6,13 @@
 /*   By: men-naim <men-naim@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 12:10:52 by men-naim          #+#    #+#             */
-/*   Updated: 2026/11/22 12:58:52 by men-naim         ###   ########.fr       */
+/*   Updated: 2026/11/22 16:08:58 by men-naim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <limits.h>
 
-void rev_arr(char *p)
+static void rev_arr(char *p)
 {
   int start;
   int end;
@@ -23,14 +22,11 @@ void rev_arr(char *p)
   end = 0;
   while (*(p + end))
     end++;
-  end--;
-  while (end > start)
+  while (--end > start)
   {
-    tmp = *(p + start);
-    *(p + start) = *(p + end);
-    *(p + end) = tmp;
-    start++;
-    end--;
+    tmp = *(p + end);
+    *(p + end) = *(p + start);
+    *(p + start++) = tmp;
   }
 }
 
@@ -55,9 +51,4 @@ int ft_putnbr(int n)
   array[i] = '\0';
   rev_arr(array + 1);
   return (ft_putstr(array));
-}
-
-int main()
-{
-	ft_putnbr(INT_MIN);
 }
