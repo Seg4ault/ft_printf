@@ -6,7 +6,7 @@
 /*   By: men-naim <men-naim@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 16:41:36 by men-naim          #+#    #+#             */
-/*   Updated: 2026/11/22 18:41:19 by men-naim         ###   ########.fr       */
+/*   Updated: 2026/11/24 16:53:29 by men-naim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,23 @@
 int	ft_putptr(void *p)
 {
 	size_t	n;
+	int		i;
+	char	*base;
+	char	buffer[19];
 
 	if (!p)
-		return (ft_putstr("(nil"));
+		return (ft_putstr("(nil)"));
+	buffer[0] = '0';
+	buffer[1] = 'x';
+	base = "0123456789abcdef";
 	n = (size_t) p;
-	ft_putstr("0x");
-	return (ft_puthex(n, 'x'));
+	i = 2;
+	while (n > 0)
+	{
+		buffer[i++] = n % 16 + '0';
+		n /= 16;
+	}
+	buffer[i] = '\0';
+	rev_arr(buffer + 2);
+	return (ft_putstr(buffer));
 }

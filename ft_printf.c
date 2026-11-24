@@ -6,7 +6,7 @@
 /*   By: men-naim <men-naim@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 12:02:50 by men-naim          #+#    #+#             */
-/*   Updated: 2026/11/24 15:42:37 by men-naim         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:46:33 by men-naim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	formatter(const char *fmt, va_list *arg)
 {
 	if (*fmt == '\0')
-		return(-1);
+		return (-1);
 	if (*fmt == 'd' || *fmt == 'i')
 		return (ft_putnbr(va_arg(*arg, int)));
 	else if (*fmt == 'c')
@@ -28,9 +28,11 @@ static int	formatter(const char *fmt, va_list *arg)
 		return (ft_putptr(va_arg(*arg, void *)));
 	else if (*fmt == 'X' || *fmt == 'x')
 		return (ft_puthex(va_arg(*arg, size_t), *fmt));
+	else if (*fmt == '%')
+		return (ft_putchar('%'));
 	else if (ft_putchar('%') == -1 || ft_putchar(*fmt) == -1)
 		return (-1);
-	return (1);
+	return (2);
 }
 
 int	ft_printf(const char *fmt, ...)
@@ -48,7 +50,7 @@ int	ft_printf(const char *fmt, ...)
 	while (*(fmt + i))
 	{
 		if (*(fmt + i) == '%')
-			return_val = formatter(fmt + i + 1, &args);
+			return_val = formatter((fmt + ++i), &args);
 		else
 			return_val = ft_putchar(*(fmt + i));
 		if (return_val == -1)
