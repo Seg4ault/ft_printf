@@ -12,36 +12,37 @@
 
 #include "ft_printf.h"
 
-static void	rev_arr(char *p)
+static void rev_arr(char *p)
 {
-	int		start;
-	int		end;
-	char	tmp;
+  int start;
+  int end;
+  char tmp;
 
-	start = 0;
-	end = 0;
-	while (*(p + end))
-		end++;
-	while (--end > start)
-	{
-		tmp = *(p + end);
-		*(p + end) = *(p + start);
-		*(p + start++) = tmp;
-	}
+  start = 0;
+  end = 0;
+  while (*(p + end))
+    end++;
+  while (--end > start)
+  {
+    tmp = *(p + end);
+    *(p + end) = *(p + start);
+    *(p + start++) = tmp;
+  }
 }
 
-int	ft_putnbr_unsigned(unsigned int n)
+int ft_putnbr_unsigned(unsigned int n)
 {
-	char	array[11];
-	int		i;
+  char array[11];
+  int i;
 
-	i = 0;
-	while (n > 0)
-	{
-		array[i++] = n % 10 + '0';
-		n /= 10;
-	}
-	array[i] = '\0';
-	rev_arr(array);
-	return (ft_putstr(array));
+  i = 0;
+  while (n > 0)
+  {
+    array[i++] = n % 10 + '0';
+    n /= 10;
+  }
+  array[i] = '\0';
+  rev_arr(array);
+  return (ft_putstr(array));
 }
+
