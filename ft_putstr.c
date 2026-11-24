@@ -12,14 +12,14 @@
 
 #include "ft_printf.h"
 
-int ft_putstr(const char *s)
+int	ft_putstr(const char *s)
 {
-	unsigned int i;
-	
+	unsigned int	i;
+
 	if (!s)
 		return (write(1, "(null)", 6));
 	i = 0;
 	while (*(s + i))
 		i++;
-	return(write(1, s, i));
+	return (write(1, s, i));
 }

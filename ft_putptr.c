@@ -12,12 +12,13 @@
 
 #include "ft_printf.h"
 
-int ft_putptr(void *p)
+int	ft_putptr(void *p)
 {
-  if (!p)
-    return (ft_putstr("(nil"));
-  uintptr_t n = (uintptr_t)p;
-  ft_putstr("0x");
-  return(ft_puthex(n, 'x'));
-}
+	size_t	n;
 
+	if (!p)
+		return (ft_putstr("(nil"));
+	n = (size_t) p;
+	ft_putstr("0x");
+	return (ft_puthex(n, 'x'));
+}
