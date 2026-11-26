@@ -6,15 +6,15 @@
 /*   By: men-naim <men-naim@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 15:37:17 by men-naim          #+#    #+#             */
-/*   Updated: 2026/11/24 16:48:04 by men-naim         ###   ########.fr       */
+/*   Updated: 2026/11/26 11:29:47 by men-naim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(size_t n, char c)
+int	ft_puthex(unsigned int n, char c)
 {
-	char	buffer[20];
+	char	buffer[9];
 	char	*hexbase;
 	int		i;
 
@@ -23,6 +23,8 @@ int	ft_puthex(size_t n, char c)
 	else
 		hexbase = "0123456789ABCDEF";
 	i = 0;
+  if (n == 0)
+    return(ft_putchar('0'));
 	while (n > 0)
 	{
 		buffer[i++] = *(hexbase + (n % 16));

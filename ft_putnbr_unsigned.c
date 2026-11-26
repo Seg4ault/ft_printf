@@ -6,7 +6,7 @@
 /*   By: men-naim <men-naim@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 13:20:55 by men-naim          #+#    #+#             */
-/*   Updated: 2026/11/24 16:48:21 by men-naim         ###   ########.fr       */
+/*   Updated: 2026/11/26 11:23:25 by men-naim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_putnbr_unsigned(unsigned int n)
 	int		i;
 
 	i = 0;
+  if (n == 0)
+    return (ft_putchar('0'));
 	while (n > 0)
 	{
 		array[i++] = n % 10 + '0';

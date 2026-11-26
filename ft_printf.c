@@ -6,7 +6,7 @@
 /*   By: men-naim <men-naim@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 12:02:50 by men-naim          #+#    #+#             */
-/*   Updated: 2026/11/24 18:46:33 by men-naim         ###   ########.fr       */
+/*   Updated: 2026/11/26 11:29:23 by men-naim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	formatter(const char *fmt, va_list *arg)
 	else if (*fmt == 'p')
 		return (ft_putptr(va_arg(*arg, void *)));
 	else if (*fmt == 'X' || *fmt == 'x')
-		return (ft_puthex(va_arg(*arg, size_t), *fmt));
+		return (ft_puthex(va_arg(*arg, unsigned int), *fmt));
 	else if (*fmt == '%')
 		return (ft_putchar('%'));
 	else if (ft_putchar('%') == -1 || ft_putchar(*fmt) == -1)
