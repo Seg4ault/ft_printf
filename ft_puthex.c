@@ -6,7 +6,7 @@
 /*   By: men-naim <men-naim@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 15:37:17 by men-naim          #+#    #+#             */
-/*   Updated: 2026/11/26 11:29:47 by men-naim         ###   ########.fr       */
+/*   Updated: 2026/11/27 13:07:38 by men-naim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_puthex(unsigned int n, char c)
 	else
 		hexbase = "0123456789ABCDEF";
 	i = 0;
-  if (n == 0)
-    return(ft_putchar('0'));
+	if (n == 0)
+		return (ft_putchar('0'));
 	while (n > 0)
 	{
 		buffer[i++] = *(hexbase + (n % 16));
